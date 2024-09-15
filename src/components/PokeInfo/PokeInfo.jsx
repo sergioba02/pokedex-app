@@ -8,8 +8,8 @@ function PokeInfo() {
     return (
         <>
             <div className="poke-info">
-                <TypeLabel type={'Water'} />
-                <PokemonCardBasics weight={'5.9 kg'} height={'0.5m'} />
+                <TypeLabel />
+                <PokemonCardBasics />
                 <CardDescription />
                 <BaseStats />
             </div>

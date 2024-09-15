@@ -1,13 +1,19 @@
 import PokeInfo from './PokeInfo/PokeInfo'
 import CardHeader from './CardHeader'
 import CardImg from './CardImg'
+import { useContext } from 'react'
+import { DataContext } from '../context/Data'
 
 function Card() {
+    const { data } = useContext(DataContext);
     return (
         <>
             <div className="card">
-                <CardHeader name={'Oshawott'} id={501} />
-                <CardImg url={'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/501.png'} alt={'Oshawott'} />
+
+                
+                <CardHeader name={data && data.name ? data.name[0].toUpperCase() + data.name.slice(1) : 'Cargando...'}
+                        id={data && data.id ? data.id : 'N/A'} />
+                <CardImg />
                 <PokeInfo />
             </div>
         </>
